@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] float _maxHealth = 10f;
 
     private float _currentHealth;
+    public TextMeshProUGUI healthBarValueText;
 
     private void Awake()
     {
@@ -23,6 +25,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void Update()
     {
+        //Display Health Value 10/10
+        healthBarValueText.text = _currentHealth.ToString() + "/" + _maxHealth.ToString();
+
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             DrainHealth();

@@ -7,3 +7,4 @@
 *.sln text eol=crlf
 *.png binary
 *.jpg binary
+Electro-Bond/** filter=lfs diff=lfs merge=lfs -text
